@@ -1,0 +1,58 @@
+export const categories = [
+  {
+    id: 'landmark', icon: '🏯', label: '城市地标', color: '#F4A460', bg: '#FFF5EB',
+    items: [
+      { name: '湖北省博物馆', desc: '哇！这里藏着两千多年前的编钟，敲一下还能发出好听的声音呢～🎵 越王勾践的宝剑也在这里闪闪发光！', img: '/images/card/city/1.png' },
+      { name: '长江大桥', desc: '轰隆隆～火车从下面跑、汽车在上面开，这座超级大桥每天都好忙好忙！🌉 站在桥上吹江风超舒服～', img: '/images/card/city/2.png' },
+      { name: '黄鹤楼', desc: '登上这座千年名楼，可以看到长江像一条银色的丝带飘向远方～🏯 诗人李白也在这里写过诗哦！', img: '/images/card/city/3.png' },
+      { name: '武汉大学', desc: '春天来啦！珞珈山下的樱花像粉色的云朵一样盛开🌸 在这所超美大学里读书一定很幸福吧～', img: '/images/card/city/4.png' },
+      { name: '古德寺', desc: '这座寺庙长得像欧洲城堡一样！圆圆的穹顶和奇妙的雕塑，像是从童话书里跑出来的～🏰✨', img: '/images/card/city/5.png' },
+      { name: '晴川阁', desc: '晴川历历汉阳树～江风吹过千年诗境，站在阁楼上能看到长江和汉江手拉手汇合哦！🌿', img: '/images/card/city/6.png' },
+      { name: '鹦鹉洲', desc: '听名字就超美的地方！长江上的一片绿洲，传说有只美丽的鹦鹉曾在这里唱歌～🦜', img: '/images/card/city/7.png' },
+      { name: '杨泗港大桥', desc: '全身金灿灿的大桥！像一条巨龙横跨长江，阳光照上去blingbling的超级耀眼～🌟', img: '/images/card/city/8.png' },
+    ],
+  },
+  {
+    id: 'relax', icon: '🌿', label: '森系疗愈', color: '#7BA87B', bg: '#F0F7F0',
+    items: [
+      { name: '堤角公园', desc: '藏在城市里的小森林！小鸟在树上叽叽喳喳开音乐会，湖里的小鸭子游来游去好可爱～🦆🌳', img: '/images/card/walk/1.png' },
+      { name: '解放公园', desc: '超大的绿色游乐场！可以在草地上打滚、在湖边喂鸽子，还能划着小船去探险～🕊️⛵', img: '/images/card/walk/2.png' },
+      { name: '龟山公园', desc: '山形像一只趴着的大乌龟！爬到山顶可以看到整个城市像积木一样排列～🐢🔭', img: '/images/card/walk/3.png' },
+      { name: '东湖绿道', desc: '沿着湖边一直骑一直骑，风儿在耳边唱歌，路边的花儿对你点头微笑～🚲🌻', img: '/images/card/walk/4.png' },
+      { name: '武汉植物园', desc: '走进植物王国！比人还高的仙人掌、会吃虫子的捕蝇草，还有香香的花海迷宫～🌵🦋', img: '/images/card/walk/5.png' },
+      { name: '南湖游园绿道', desc: '藏在南湖边的秘密绿道！沿着湖岸一直走，能看到小鸭子排队游泳、白鹭在浅滩跳舞～🦆🌿 春天的樱花夹道超梦幻！', img: '/images/card/walk/6.png' },
+    ],
+  },
+  {
+    id: 'citywalk', icon: '🚶', label: '街巷闲逛', color: '#E8B44F', bg: '#FFF9ED',
+    items: [
+      { name: '黎黄陂路', desc: '梧桐树搭成绿色的隧道，阳光从叶缝里漏下来像撒了一地金币～☀️ 路边咖啡店飘来香香的味道！', img: '/images/card/Street/1.png' },
+      { name: '汉口江滩', desc: '长江边的大公园！芦苇长得比小朋友还高，风吹过沙沙作响像在说悄悄话～🌾', img: '/images/card/Street/2.png' },
+      { name: '同兴里', desc: '一条藏在小巷子里的秘密通道，红砖老房子上爬满了绿藤蔓，像哈利波特的魔法世界～🧙‍♂️', img: '/images/card/Street/3.png' },
+      { name: '江汉路', desc: '百年老街的钟声咚咚响，欧式老建筑像一个个精致的奶油蛋糕排排站～🕰️🎂', img: '/images/card/Street/4.png' },
+      { name: '楚河汉街', desc: '河边的童话商业街！晚上灯光亮起来，水面倒映着五颜六色的光，像走进了水晶宫殿～✨', img: '/images/card/Street/5.png' },
+      { name: '粮道街', desc: '武汉最好吃的一条街！每家小店都飘着让人流口水的香味，从街头吃到街尾超满足～🤤', img: '/images/card/Street/6.png' },
+      { name: '户部巷', desc: '小吃王国！热干面、豆皮、面窝……数都数不过来的好吃的在向你招手哦～🍜', img: '/images/card/Street/7.png' },
+      { name: '昙华林', desc: '文艺小店藏在老房子里，墙上画满了可爱的涂鸦，每一个转角都能发现小惊喜～🎨', img: '/images/card/Street/8.png' },
+    ],
+  },
+  {
+    id: 'foodie', icon: '🍜', label: '美食狂欢', color: '#E8917E', bg: '#FFF4F1',
+    items: [
+      { name: '热干面', desc: '武汉人的魔法早餐！筋道的面条裹上香香的芝麻酱，呼噜呼噜吸进嘴里，整个人都醒过来啦～🍜✨', img: '/images/card/food/1.png' },
+      { name: '三鲜豆皮', desc: '金黄脆脆的蛋皮里包着软软糯糯的米饭，咬一口嘎嘣脆，里面的香菇肉丁香喷喷～🤩', img: '/images/card/food/2.png' },
+      { name: '排骨藕汤', desc: '咕嘟咕嘟炖了超久的浓汤！粉粉的藕段能拉出丝，排骨烂烂的入口就化，冬天喝一碗暖到脚尖～🥣💕', img: '/images/card/food/3.png' },
+      { name: '武昌鱼', desc: '毛主席都夸过的鱼！清蒸之后鲜嫩嫩，筷子轻轻一夹就化开，蘸一点点汤汁更美味～🐟', img: '/images/card/food/4.png' },
+      { name: '油饼包烧卖', desc: '碳水包碳水的超级组合！酥脆油饼夹着胡椒味烧卖，一口双重满足太过瘾啦～🔥', img: '/images/card/food/5.png' },
+      { name: '鲜鱼糊汤粉', desc: '用小鱼熬了超久的浓汤做底，米粉在汤里打个滚就变得鲜美无比，撒上胡椒暖乎乎～🐠', img: '/images/card/food/6.png' },
+      { name: '面窝', desc: '圆圆的像个救生圈！中间脆脆的、边缘软软的，炸得金黄黄，咬一口咔嚓响～🍩', img: '/images/card/food/7.png' },
+      { name: '黄陂三鲜', desc: '鱼丸、肉丸、鱼糕三个好朋友手拉手！Q弹弹的鱼丸像在嘴巴里跳舞～💃', img: '/images/card/food/8.png' },
+      { name: '鸡冠饺', desc: '长得像大公鸡的冠子！外皮炸得金黄酥脆，里面藏着香香的粉条肉馅，好大一个超满足～🐔', img: '/images/card/food/9.png' },
+      { name: '糊米酒', desc: '甜甜暖暖的米酒里飘着小汤圆，冬天捧一碗在手里，热气呼呼地冒，像捧了个小暖炉～☕', img: '/images/card/food/10.png' },
+      { name: '生烫牛肉粉', desc: '鲜牛肉片在滚烫高汤里涮几秒就熟了！嫩嫩的牛肉配上滑滑的米粉，鲜得眉毛都要掉啦～🥩', img: '/images/card/food/11.png' },
+      { name: '汽水包', desc: '噗噗冒着热气的神奇包子！底部煎得焦焦脆脆，上面松松软软，像是会呼吸的面包～💨', img: '/images/card/food/12.png' },
+      { name: '糯米鸡', desc: '炸得金灿灿的糯米团子！咬开脆脆的外壳，里面是香喷喷的糯米和肉丁，像拆开一个美味的礼物～🎁', img: '/images/card/food/13.png' },
+      { name: '周黑鸭', desc: '甜甜辣辣的鸭脖子！越啃越上瘾，嘴巴麻麻的、舌头辣辣的，但手就是停不下来～🦆🔥', img: '/images/card/food/14.png' },
+    ],
+  },
+]

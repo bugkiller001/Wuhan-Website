@@ -1,0 +1,412 @@
+/* ============================================
+   二级页面共享样式
+   素材库 — 现代排版
+   ============================================ */
+
+/* 素材库头部 */
+.gallery-page__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 64px;
+  gap: 48px;
+}
+
+.gallery-page__titles {
+  flex: 1;
+}
+
+.gallery-page__kicker {
+  display: block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  color: var(--color-accent);
+  margin-bottom: 12px;
+}
+
+.gallery-page__title {
+  font-family: var(--font-serif);
+  font-size: 40px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  letter-spacing: 0.04em;
+  margin-bottom: 10px;
+  transition: color 0.4s ease;
+}
+
+.gallery-page__desc {
+  font-size: 14px;
+  color: var(--color-text-muted);
+  letter-spacing: 0.04em;
+  max-width: 380px;
+}
+
+/* 分类药丸 */
+.gallery-page__nav {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.gallery-page__pill {
+  padding: 8px 22px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  background: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: 50px;
+  cursor: pointer;
+  letter-spacing: 0.04em;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+.gallery-page__pill:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+.gallery-page__pill--active {
+  border-color: var(--color-accent);
+}
+
+/* GlassSurface 覆盖 */
+.gallery-page__pill {
+  background: none !important;
+  border: 1px solid var(--color-border) !important;
+  padding: 0 !important;
+  border-radius: 50px !important;
+  overflow: visible;
+}
+
+.gallery-page__pill--active {
+  border-color: var(--color-accent) !important;
+}
+
+.gallery-page__glass {
+  border-radius: 50px !important;
+}
+
+.gallery-page__glass .glass-surface__content {
+  padding: 0 22px !important;
+}
+
+.gallery-page__pill-text {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  transition: color 0.3s ease;
+}
+
+.gallery-page__pill--active .gallery-page__pill-text {
+  color: var(--color-accent);
+}
+
+@media (max-width: 768px) {
+  .gallery-page__head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+  .gallery-page__nav {
+    justify-content: flex-start;
+  }
+}
+
+.sub-page {
+  min-height: 100vh;
+  padding: 160px 0 120px;
+  background-color: var(--color-bg);
+  transition: background-color 0.4s ease;
+}
+
+/* ---------- 页面标题区（统一 Hero 风格）---------- */
+.sub-page__hero {
+  text-align: center;
+  margin-bottom: 72px;
+}
+
+.sub-page__kicker {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  border-bottom: 2px solid var(--color-accent-light);
+  padding-bottom: 8px;
+  margin-bottom: 28px;
+}
+
+.sub-page__title {
+  font-family: var(--font-serif);
+  font-size: 48px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  letter-spacing: 0.06em;
+  margin-bottom: 18px;
+  line-height: 1.2;
+  transition: color 0.4s ease;
+}
+
+.sub-page__desc {
+  font-size: 16px;
+  color: var(--color-text-muted);
+  letter-spacing: 0.05em;
+  max-width: 480px;
+  margin: 0 auto;
+  line-height: 1.9;
+}
+
+/* ---------- 分类导航药丸 ---------- */
+.cat-nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 60px;
+}
+
+.cat-nav__pill {
+  padding: 10px 26px;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--color-text-secondary);
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 50px;
+  cursor: pointer;
+  letter-spacing: 0.05em;
+  transition:
+    all 0.3s ease,
+    background-color 0.4s ease,
+    color 0.4s ease,
+    border-color 0.4s ease;
+  white-space: nowrap;
+}
+
+.cat-nav__pill:hover {
+  color: var(--color-accent);
+  border-color: var(--color-accent-light);
+}
+
+.cat-nav__pill--active {
+  color: #ffffff;
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+/* ---------- 图片 hover 文字 ---------- */
+.sub-page__caption {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 48px 24px 24px;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.65) 0%,
+    rgba(0, 0, 0, 0.2) 60%,
+    transparent 100%
+  );
+  color: #ffffff;
+  opacity: 0;
+  transform: translateY(12px);
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.item-wrapper:hover .sub-page__caption {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sub-page__caption-name {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  margin-bottom: 4px;
+}
+
+.sub-page__caption-desc {
+  font-size: 13px;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  opacity: 0.8;
+  line-height: 1.6;
+  max-width: 80%;
+}
+
+/* ---------- 图片微暗 ---------- */
+.sub-page .item-wrapper-img {
+  filter: brightness(0.95);
+  transition: filter 0.5s ease;
+}
+
+[data-theme="dark"] .sub-page .item-wrapper-img {
+  filter: brightness(0.8);
+}
+
+.sub-page .item-wrapper:hover .item-wrapper-img {
+  filter: brightness(0.65);
+}
+
+[data-theme="dark"] .sub-page .item-wrapper:hover .item-wrapper-img {
+  filter: brightness(0.5);
+}
+
+/* ---------- Glow 发光 ---------- */
+.sub-page .item-wrapper {
+  --glow-x: 50%;
+  --glow-y: 50%;
+  --glow-intensity: 0;
+  --glow-radius: 200px;
+  --glow-color: 184, 149, 106;
+}
+
+.sub-page .magic-glow-card--border-glow::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 3px;
+  background: radial-gradient(
+    var(--glow-radius) circle at var(--glow-x) var(--glow-y),
+    rgba(var(--glow-color), calc(var(--glow-intensity) * 0.7)) 0%,
+    rgba(var(--glow-color), calc(var(--glow-intensity) * 0.3)) 30%,
+    transparent 60%
+  );
+  border-radius: 20px;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* ============================================
+   关于我 — 大纲内容样式
+   ============================================ */
+
+.about__content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about__section {
+  margin-bottom: 64px;
+}
+
+.about__section-title {
+  font-family: var(--font-serif);
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--color-border);
+  transition: color 0.4s ease, border-color 0.4s ease;
+}
+
+.about__text {
+  font-size: 15px;
+  color: var(--color-text-muted);
+  line-height: 2;
+  letter-spacing: 0.04em;
+}
+
+/* ---------- 时间轴 ---------- */
+.about__timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-left: 1px solid var(--color-accent-light);
+  padding-left: 24px;
+  margin-left: 8px;
+}
+
+.about__timeline-item {
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+  padding: 14px 0;
+  position: relative;
+}
+
+.about__timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -29px;
+  top: 22px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--color-accent);
+}
+
+.about__year {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-accent);
+  letter-spacing: 0.08em;
+  min-width: 48px;
+}
+
+.about__event {
+  font-size: 14px;
+  color: var(--color-text-muted);
+  letter-spacing: 0.04em;
+}
+
+/* ---------- 联系方式卡片 ---------- */
+.about__contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.about__contact-card {
+  padding: 20px 24px;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  transition:
+    background-color 0.4s ease,
+    border-color 0.4s ease;
+}
+
+.about__contact-label {
+  display: block;
+  font-size: 11px;
+  color: var(--color-text-muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.about__contact-value {
+  font-size: 15px;
+  color: var(--color-text-primary);
+  letter-spacing: 0.04em;
+  transition: color 0.4s ease;
+}
+
+@media (max-width: 768px) {
+  .about__contact-grid {
+    grid-template-columns: 1fr;
+  }
+}

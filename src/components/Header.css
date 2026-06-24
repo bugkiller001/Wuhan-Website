@@ -1,0 +1,144 @@
+/* ============================================
+   Header 导航栏样式 — 药丸形 GlassSurface
+   ============================================ */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 24px 0;
+  transition: padding var(--transition-base);
+}
+
+.header--scrolled {
+  padding: 14px 0;
+}
+
+/* 内部布局 */
+.header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ---------- 药丸容器 ---------- */
+.header__pill {
+  flex-shrink: 0;
+}
+
+.header__pill--logo {
+  /* logo 药丸 */
+}
+
+.header__pill--nav {
+  /* nav 药丸 */
+}
+
+/* GlassSurface 的 content 层需要去除默认 padding */
+.header__pill .glass-surface__content {
+  padding: 0 20px !important;
+}
+
+/* ---------- Logo 区域 ---------- */
+.header__logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  height: 100%;
+  padding: 0 4px;
+}
+
+.header__logo-img {
+  height: 32px;
+  width: auto;
+  transition: height var(--transition-base);
+}
+
+.header--scrolled .header__logo-img {
+  height: 28px;
+}
+
+/* h1 标签文字 */
+.header__title {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: 0.08em;
+  transition: color var(--transition-base);
+  white-space: nowrap;
+}
+
+.header--scrolled .header__title {
+  color: var(--color-text-primary);
+}
+
+/* ---------- 导航菜单 ---------- */
+.header__nav {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.header__nav-list {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.header__nav-link {
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.88);
+  letter-spacing: 0.04em;
+  transition:
+    color var(--transition-fast),
+    opacity var(--transition-fast);
+  position: relative;
+  white-space: nowrap;
+}
+
+/* 导航下划线动效 */
+.header__nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1.5px;
+  background-color: #ffffff;
+  transition: width var(--transition-base);
+}
+
+.header--scrolled .header__nav-link {
+  color: #1a1a1a;
+}
+
+/* 当前激活的导航项 */
+.header__nav-link--active::after {
+  width: 100% !important;
+}
+
+.header--scrolled .header__nav-link--active {
+  color: var(--color-accent);
+}
+
+.header--scrolled .header__nav-link::after {
+  background-color: var(--color-accent);
+}
+
+.header__nav-link:hover {
+  opacity: 1;
+  color: #ffffff;
+}
+
+.header--scrolled .header__nav-link:hover {
+  color: var(--color-accent);
+}
+
+.header__nav-link:hover::after {
+  width: 100%;
+}

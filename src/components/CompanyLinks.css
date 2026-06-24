@@ -1,0 +1,42 @@
+.company-links {
+  padding: 0;
+  background: var(--color-bg);
+  transition: background-color 0.4s ease;
+}
+
+.company-links__title {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  color: #2c2c2c;
+  letter-spacing: 0.04em;
+  margin-bottom: 40px;
+}
+
+[data-theme="dark"] .company-links__title { color: #e8e4df; }
+
+.company-links__row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.company-links__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.company-links__item:hover {
+  transform: scale(1.12);
+}
+
+.company-links__item img {
+  width: 256px;
+  height: 256px;
+  object-fit: contain;
+  display: block;
+}

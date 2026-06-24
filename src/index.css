@@ -1,0 +1,129 @@
+/* ============================================
+   武汉 — 城市影像记录
+   全局样式 / Global Styles
+   设计方向：亮色系 · 干净高级 · 简约克制 · 文化感 · 轻科技感
+   ============================================ */
+
+/* ---------- CSS 变量 / Design Tokens ---------- */
+:root {
+  /* 色彩系统 — 亮色 */
+  --color-bg: #fafaf9;
+  --color-white: #ffffff;
+  --color-text-primary: #1a1a1a;
+  --color-text-secondary: #555555;
+  --color-text-muted: #888888;
+  --color-accent: #b8956a;
+  --color-accent-light: #d4c4a8;
+  --color-border: #e8e4df;
+  --color-overlay: rgba(0, 0, 0, 0.45);
+  --color-footer-bg: #f5f3f0;
+  --color-card-bg: #e8e4df;
+
+  /* 排版 */
+  --font-sans: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans SC', sans-serif;
+  --font-serif: 'Noto Serif SC', 'Source Han Serif SC', 'STSong', 'SimSun', serif;
+
+  /* 间距 */
+  --page-width: 1700px;
+  --section-padding: 120px 60px;
+
+  /* 阴影 — 亮色 */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.08);
+
+  /* 圆角 */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+
+  /* 过渡 */
+  --transition-fast: 0.2s ease;
+  --transition-base: 0.35s ease;
+  --transition-slow: 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+/* ---------- 深色模式 ---------- */
+[data-theme="dark"] {
+  --color-bg: #121212;
+  --color-white: #1e1e1e;
+  --color-text-primary: #e8e4df;
+  --color-text-secondary: #b0aca6;
+  --color-text-muted: #7a7670;
+  --color-accent: #c9a87c;
+  --color-accent-light: #8a7555;
+  --color-border: #2a2824;
+  --color-overlay: rgba(0, 0, 0, 0.65);
+  --color-footer-bg: #181614;
+  --color-card-bg: #1e1c1a;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* ---------- 全局重置 ---------- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-text-primary);
+  background-color: var(--color-bg);
+  overflow-x: hidden;
+  transition:
+    background-color 0.4s ease,
+    color 0.4s ease;
+}
+
+/* 版心容器 */
+.container {
+  width: 100%;
+  max-width: var(--page-width);
+  margin: 0 auto;
+  padding: 0 60px;
+}
+
+/* 链接重置 */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* 列表重置 */
+ul, ol {
+  list-style: none;
+}
+
+/* 图片重置 */
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* 按钮重置 */
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* 选中色 */
+::selection {
+  background-color: var(--color-accent-light);
+  color: var(--color-white);
+}

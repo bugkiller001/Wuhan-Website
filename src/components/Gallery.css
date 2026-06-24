@@ -1,0 +1,248 @@
+/* ============================================
+   Gallery — Masonry 瀑布流布局
+   ============================================ */
+
+.gallery {
+  padding: 120px 0 160px;
+  background-color: var(--color-bg);
+  transition: background-color 0.4s ease;
+  content-visibility: auto;
+  contain-intrinsic-size: 800px;
+}
+
+/* ---------- 模块标题 ---------- */
+.gallery__header {
+  text-align: center;
+  margin-bottom: 72px;
+}
+
+.gallery__label {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  border-bottom: 2px solid var(--color-accent-light);
+  padding-bottom: 8px;
+  margin-bottom: 28px;
+}
+
+.gallery__title {
+  font-family: var(--font-serif);
+  font-size: 48px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  letter-spacing: 0.06em;
+  margin-bottom: 18px;
+  line-height: 1.2;
+}
+
+.gallery__intro {
+  font-size: 15px;
+  color: var(--color-text-muted);
+  letter-spacing: 0.05em;
+  max-width: 440px;
+  margin: 0 auto;
+  line-height: 1.9;
+}
+
+/* ---------- 居中标题 ---------- */
+.gallery__center-title {
+  text-align: center;
+  margin-bottom: 40px;
+  font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif;
+  transition: color 0.4s ease;
+}
+
+.gallery__center-recommend {
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  color: #646464;
+  letter-spacing: 0.12em;
+  margin-bottom: 4px;
+}
+
+.gallery__center-maybe {
+  display: block;
+  font-size: 28px;
+  font-weight: 700;
+  color: #1a1a1a;
+  letter-spacing: 0.06em;
+}
+
+/* ---------- 分类导航药丸 ---------- */
+.cat-nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 60px;
+}
+
+.cat-nav__pill {
+  padding: 10px 26px;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--color-text-secondary);
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 50px;
+  cursor: pointer;
+  letter-spacing: 0.05em;
+  transition:
+    all 0.3s ease,
+    background-color 0.4s ease,
+    color 0.4s ease,
+    border-color 0.4s ease;
+  white-space: nowrap;
+}
+
+.cat-nav__pill:hover {
+  color: var(--color-accent);
+  border-color: var(--color-accent-light);
+}
+
+.cat-nav__pill--active {
+  color: #ffffff;
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+/* ---------- MagicBento 发光卡片 ---------- */
+.item-wrapper {
+  --glow-x: 50%;
+  --glow-y: 50%;
+  --glow-intensity: 0;
+  --glow-radius: 200px;
+  --glow-color: 184, 149, 106;
+}
+
+/* 边框发光 ::after */
+.magic-glow-card--border-glow::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 3px;
+  background: radial-gradient(
+    var(--glow-radius) circle at var(--glow-x) var(--glow-y),
+    rgba(var(--glow-color), calc(var(--glow-intensity) * 0.7)) 0%,
+    rgba(var(--glow-color), calc(var(--glow-intensity) * 0.3)) 30%,
+    transparent 60%
+  );
+  border-radius: 20px;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* ---------- 图片微暗 ---------- */
+.item-wrapper .item-img {
+  filter: brightness(0.95);
+  transition: filter 0.5s ease;
+}
+
+[data-theme="dark"] .item-wrapper .item-img {
+  filter: brightness(0.8);
+}
+
+.item-wrapper:hover .item-wrapper .item-img {
+  filter: brightness(0.65);
+}
+
+[data-theme="dark"] .item-wrapper:hover .item-wrapper .item-img {
+  filter: brightness(0.5);
+}
+
+/* ---------- 文字叠加层 —— 默认隐藏，hover 渐入 ---------- */
+.gallery__card-caption {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 48px 24px 24px;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.65) 0%,
+    rgba(0, 0, 0, 0.2) 60%,
+    transparent 100%
+  );
+  color: #ffffff;
+  opacity: 0;
+  transform: translateY(12px);
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.item-wrapper:hover .gallery__card-caption {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.gallery__card-name {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  margin-bottom: 4px;
+}
+
+.gallery__card-desc {
+  font-size: 13px;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  opacity: 0.8;
+  line-height: 1.6;
+  max-width: 80%;
+}
+
+/* ---------- Dome 3D 画廊 ---------- */
+.gallery-dome {
+  height: 100vh;
+  min-height: 700px;
+  position: relative;
+  background: var(--color-bg);
+  transition: background-color 0.4s ease;
+  padding-top: 100px;
+}
+
+[data-theme="dark"] .gallery-dome {
+  background: #121212;
+}
+
+.gallery-dome .gallery__center-title {
+  position: absolute;
+  top: 48px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  margin-bottom: 0;
+}
+
+.gallery-dome__stage {
+  width: 100%;
+  height: 100%;
+}
+
+/* 隐藏四角炫光 */
+.gallery-dome .overlay,
+.gallery-dome .overlay--blur,
+.gallery-dome .edge-fade {
+  display: none;
+}
+
+/* ---------- 武汉美食区域 ---------- */
+.food-section .item-wrapper .item-img {
+  border-radius: 20px;
+}

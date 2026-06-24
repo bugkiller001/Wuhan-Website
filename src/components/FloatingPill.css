@@ -1,0 +1,58 @@
+.floating-pill {
+  position: fixed;
+  bottom: 36px;
+  right: 36px;
+  z-index: 2000;
+  transition: transform 0.3s ease;
+}
+
+.floating-pill:hover {
+  transform: scale(1.05);
+}
+
+.floating-pill__glass {
+  border-radius: 50px !important;
+}
+
+.floating-pill__glass .glass-surface__content {
+  padding: 0 !important;
+}
+
+.floating-pill__inner {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  padding: 0 8px;
+}
+
+.floating-pill__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: #ffffff;
+  transition: color 0.3s ease;
+  border-radius: 50%;
+}
+
+.floating-pill__btn:hover {
+  color: var(--color-accent);
+}
+
+.floating-pill__label {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.floating-pill__divider {
+  width: 1px;
+  height: 18px;
+  background: rgba(255, 255, 255, 0.25);
+  margin: 0 2px;
+}

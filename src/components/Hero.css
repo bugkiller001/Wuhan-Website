@@ -1,0 +1,128 @@
+/* ============================================
+   Hero 全屏首屏样式
+   ============================================ */
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* ---------- 视频背景 ---------- */
+.hero__video-wrapper {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero__video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transform: scale(1.08);
+  filter: blur(6px);
+  will-change: transform, opacity, filter;
+  transition:
+    opacity 1.8s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 1.8s cubic-bezier(0.4, 0, 0.2, 1),
+    filter 1.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero__video--active {
+  opacity: 1;
+  transform: scale(1);
+  filter: blur(0);
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+}
+
+/* ---------- 中央内容 ---------- */
+.hero__content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  padding: 0 40px;
+}
+
+/* 中央图片 */
+.hero__center-image {
+  max-width: 500px;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 4px 40px rgba(0, 0, 0, 0.3));
+  animation: heroImageIn 1.2s cubic-bezier(0.25, 0.1, 0.25, 1) both;
+}
+
+@keyframes heroImageIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------- CTA 按钮 ---------- */
+.hero__cta {
+  display: inline-flex;
+  align-items: center;
+  padding: 0;
+  font-size: 16px;
+  font-weight: 400;
+  color: #ffffff;
+  letter-spacing: 0.06em;
+  background: none;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: transform var(--transition-base);
+}
+
+.hero__cta:hover {
+  transform: scale(1.04);
+}
+
+.hero__cta-glass {
+  border-radius: 50px !important;
+}
+
+.hero__cta-glass .glass-surface__content {
+  padding: 0 36px !important;
+}
+
+.hero__cta-inner {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+  transition: gap var(--transition-base);
+}
+
+.hero__cta:hover .hero__cta-inner {
+  gap: 16px;
+}
+
+.hero__cta-arrow {
+  transition: transform var(--transition-base);
+}
+
+.hero__cta:hover .hero__cta-arrow {
+  transform: translateY(3px);
+}

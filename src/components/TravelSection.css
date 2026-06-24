@@ -1,0 +1,261 @@
+.travel {
+  padding: 120px 0 140px;
+  background: var(--color-bg);
+  transition: background-color 0.4s ease;
+}
+
+.travel__title {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  color: #2c2c2c;
+  letter-spacing: 0.04em;
+  margin-bottom: 8px;
+}
+
+[data-theme="dark"] .travel__title { color: #e8e4df; }
+
+.travel__sub {
+  text-align: center;
+  font-size: 14px;
+  color: #999;
+  letter-spacing: 0.06em;
+  margin-bottom: 72px;
+}
+
+/* 每日区块 */
+.travel-day {
+  margin-bottom: 80px;
+  padding: 48px 40px 52px;
+  background: var(--day-bg);
+  border-radius: 28px;
+  border: 2px dashed var(--day-color);
+  position: relative;
+  transition: background-color 0.4s ease;
+}
+
+[data-theme="dark"] .travel-day {
+  background: rgba(0,0,0,0.2);
+}
+
+.travel-day__head {
+  margin-bottom: 40px;
+}
+
+.travel-day__label {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  margin-bottom: 4px;
+}
+
+.travel-day__title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #2c2c2c;
+  letter-spacing: 0.05em;
+}
+
+[data-theme="dark"] .travel-day__title { color: #e8e4df; }
+
+/* 卡片容器 */
+.travel-day__cards {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  min-height: 280px;
+}
+
+/* SVG 连线 */
+.travel-day__lines {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* 单张卡片 */
+.travel-card {
+  flex: 0 0 18%;
+  position: relative;
+  z-index: 1;
+  transform: translate(var(--offset-x), var(--offset-y)) rotate(var(--card-rot));
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.travel-card:hover {
+  transform: translate(var(--offset-x), calc(var(--offset-y) - 6px)) rotate(0deg);
+  z-index: 5;
+}
+
+.travel-card__inner {
+  background: #fff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+  transition: box-shadow 0.35s ease;
+}
+
+[data-theme="dark"] .travel-card__inner {
+  background: #2a2824;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+.travel-card:hover .travel-card__inner {
+  box-shadow: 0 12px 36px rgba(0,0,0,0.13);
+}
+
+/* 序号 */
+.travel-card__num {
+  position: absolute;
+  top: -8px;
+  left: -6px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+/* 图片 */
+.travel-card__img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.travel-card__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.travel-card:hover .travel-card__img img {
+  transform: scale(1.08);
+}
+
+/* 底部信息 */
+.travel-card__info {
+  padding: 12px 14px 14px;
+}
+
+.travel-card__name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #2c2c2c;
+  margin-bottom: 8px;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+[data-theme="dark"] .travel-card__name { color: #e8e4df; }
+
+.travel-card__map {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  color: var(--day-color);
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  transition: opacity 0.2s;
+}
+
+.travel-card__map:hover {
+  opacity: 0.7;
+}
+
+/* 灯箱 */
+.travel-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 5000;
+  background: rgba(0,0,0,0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.travel-lightbox__inner {
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  max-width: 560px;
+  width: 90vw;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+  position: relative;
+}
+
+[data-theme="dark"] .travel-lightbox__inner {
+  background: #1e1e1e;
+}
+
+.travel-lightbox__inner img {
+  width: 100%;
+  display: block;
+  max-height: 60vh;
+  object-fit: cover;
+}
+
+.travel-lightbox__close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  color: #fff;
+  background: rgba(0,0,0,0.4);
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 50%;
+  z-index: 2;
+  backdrop-filter: blur(4px);
+  transition: background 0.2s;
+}
+
+.travel-lightbox__close:hover {
+  background: rgba(0,0,0,0.6);
+}
+
+.travel-lightbox__text {
+  padding: 24px 28px 28px;
+}
+
+.travel-lightbox__text h3 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #2c2c2c;
+  margin-bottom: 8px;
+}
+
+[data-theme="dark"] .travel-lightbox__text h3 { color: #e8e4df; }
+
+.travel-lightbox__text p {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #666;
+}
+
+[data-theme="dark"] .travel-lightbox__text p { color: #999; }
+
+@media (max-width: 900px) {
+  .travel-day__cards { flex-direction: column; align-items: center; gap: 24px; min-height: auto; }
+  .travel-card { flex: none; width: 80%; }
+  .travel-day__lines { display: none; }
+}
